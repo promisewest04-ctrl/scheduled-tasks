@@ -5,7 +5,7 @@ from random import randint
 import pandas as pd
 
 MY_EMAIL = os.environ.get("MY_EMAIL")
-PASSWORD = os.environ.get("PASSWORD")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 today = (dt.now().month, dt.now().day)
 
@@ -22,7 +22,7 @@ if today in birthday_dict:
         new_letter = letter.replace("[NAME]", friend_name)
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(MY_EMAIL, PASSWORD)
+        connection.login(MY_EMAIL, MY_PASSWORD)
         connection.sendmail(
             from_addr=MY_EMAIL,
             to_addrs=friend_email,
