@@ -1,3 +1,4 @@
+import os
 import smtplib
 from datetime import datetime as dt
 from random import randint
